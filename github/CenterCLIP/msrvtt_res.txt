@@ -1,0 +1,127 @@
+root@761aee2b0c2e:/home/estela19/workspace/vlret/github/CenterCLIP/scripts# sh msrvtt.sh 
+input the gpu (seperate by comma (,) ): 0
+Using local machine for training
+The model dir is /root/models/eclip/eclip_msrvtt_80
+Traceback (most recent call last):
+  File "../main.py", line 20, in <module>
+    from dataloaders.data_dataloaders import DATALOADER_DICT
+  File "/home/estela19/workspace/vlret/github/CenterCLIP/dataloaders/data_dataloaders.py", line 4, in <module>
+    from dataloaders.dataloader_msrvtt_retrieval import MSRVTT_DataLoader
+  File "/home/estela19/workspace/vlret/github/CenterCLIP/dataloaders/dataloader_msrvtt_retrieval.py", line 14, in <module>
+    from .decode import RawVideoExtractorpyAV
+  File "/home/estela19/workspace/vlret/github/CenterCLIP/dataloaders/decode.py", line 14, in <module>
+    from .sampling import multi_segments_sampling, uniform_sampling, vss_sampling
+  File "/home/estela19/workspace/vlret/github/CenterCLIP/dataloaders/sampling.py", line 7, in <module>
+    from utils import find_max, frames_per_seg
+ImportError: cannot import name 'find_max' from 'utils' (unknown location)
+Training Finished!!!
+root@761aee2b0c2e:/home/estela19/workspace/vlret/github/CenterCLIP/scripts# sh msrvtt.sh 
+input the gpu (seperate by comma (,) ): 0
+Using local machine for training
+The model dir is /root/models/eclip/eclip_msrvtt_80
+
+ {'do_pretrain': False, 'do_train': 0, 'do_eval': 1, 'inference_speed_test': 0, 'debug': False, 'data_dir': '/cache/dataset', 'lmdb_dataset': 'None', 'save_feature_path': None, 'train_csv': '/home/estela19/workspace/vlret/dataset/msrvtt/msrvtt_data/MSRVTT_train.7k.csv', 'val_csv': '/home/estela19/workspace/vlret/dataset/msrvtt/msrvtt_data/MSRVTT_JSFUSION_test.csv', 'data_path': '/home/estela19/workspace/vlret/dataset/msrvtt/msrvtt_data/MSRVTT_data.json', 'features_path': '/home/estela19/workspace/vlret/dataset/msrvtt/resized_video', 'num_thread_reader': 8, 'epochs': 5, 'batch_size': 64, 'batch_size_val': 16, 'lr': 0.005, 'lr_decay': 0.9, 'coef_lr': 0.001, 'beta1': 0.9, 'beta2': 0.98, 'eps': 1e-06, 'wd': 0.2, 'n_display': 50, 'video_dim': 1024, 'seed': 42, 'max_words': 32, 'max_frames': 12, 'feature_framerate': 3, 'margin': 0.1, 'hard_negative_rate': 0.5, 'negative_weighting': 1, 'n_pair': 1, 'output_dir': '/root/models/eclip/eclip_msrvtt_80', 'resume': '/home/estela19/workspace/vlret/models/eclip/ckpt.best.pth.tar', 'load_from_pretrained': 0, 'cross_model': 'cross-base', 'init_model': None, 'do_lower_case': False, 'optim': 'AdamW', 'warmup_proportion': 0.1, 'gradient_accumulation_steps': 1, 'clip_grad_norm': 1.0, 'cache_dir': '', 'task_type': 'retrieval', 'datatype': 'msrvtt', 'use_mil': False, 'sampled_use_mil': False, 'text_num_hidden_layers': 12, 'visual_num_hidden_layers': 12, 'cross_num_hidden_layers': 4, 'loose_type': True, 'expand_msrvtt_sentences': True, 'train_frame_order': 0, 'eval_frame_order': 0, 'freeze_layer_num': 0, 'slice_framepos': 2, 'linear_patch': '2d', 'sim_header': 'meanP', 'pretrained_clip_name': 'ViT-B/32', 'pretrained_dir': '/home/estela19/workspace/vlret/models/pretrained', 'dist_backend': 'nccl', 'world_size': 1, 'local_rank': 0, 'init_method': 'tcp://127.0.0.1:6061', 'dp': False, 'multigpu': None, 'gpu': None, 'n_gpu': 1, 'use_bn_sync': False, 'remote': 0, 'data_loaded': 0, 'precision': 'amp', 'cluster_algo': 'kmediods++', 'cluster_embedding': 0, 'cluser_embed_from_clip': 1, 'cluster_frame_embedding': 0, 'adaptive_cls': 0, 'aggregation': None, 'cluster_iter_limit': 100, 'cluster_distance': 'euclidean', 'cluster_threshold': 1e-06, 'minkowski_norm_p': 2.0, 'cluster_inter': 1, 'cluster_num_blocks': [49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49], 'target_frames_blocks': [12, 12, 12, 12, 12, 12, 12, 4, 4, 4, 4, 4], 'spectral_sigma': 2.0, 'spectral_graph': 'HeatKernel', 'spectral_knn_k': 1, 'spectral_spg': 0, 'svd_correct_sign': 1, 'deep_cluster': 0, 'cluster_inter_dim': 256, 'freeze_clip': 0, 'temperature_new': 1.0, 'time_embedding': 0, 'camoe_dsl': 0, 'pre_norm': 0, 'tensorboard_path': '/root/models/eclip/eclip_msrvtt_80/tensorboard', 'log_level': 20, 'new_added_modules': ['time_embedding', 'frame_embedding', 'deepcluster']} 
+
+INFO: [CUDA] The number of GPUs in this node is 1
+INFO: [CUDA] Initialize process group for distributed training
+INFO: [CUDA] Use [GPU: 0 / Global Rank: 0] for training, init_method tcp://127.0.0.1:6061, world size 1
+2022-08-08,14:24:09 | INFO | Rank 0 | loading archive file /home/estela19/workspace/vlret/github/CenterCLIP/modules/cross-base
+2022-08-08,14:24:09 | INFO | Rank 0 | config of Cross Model {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 77,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2022-08-08,14:24:09 | INFO | Rank 0 | Weight doesn't exsits. /home/estela19/workspace/vlret/github/CenterCLIP/modules/cross-base/cross_pytorch_model.bin
+2022-08-08,14:24:09 | INFO | Rank 0 | 
+ config of CLIP4Clip:
+         Stage-One:True
+         Stage-Two:False
+         loose type True
+         linear_patch: 2d
+         sim_header: meanP
+         camoe_dsl: 0
+
+2022-08-08,14:24:09 | INFO | Rank 0 | 
+ config of CLIP:
+         embed_dim: 512
+         image_resolution: 224,
+         vision_layers: 12,
+         vision_width: 768,
+         vision_patch_size: 32,
+         video_frames: 12,
+         context_length: 77,
+         vocab_size: 49408,
+         transformer_width: 512,
+         transformer_heads: 8,
+         transformer_layers: 12,
+
+2022-08-08,14:24:10 | INFO | Rank 0 | [cluster] Creating cluster algorithm object in transformer blocks:
+         algorithm: kmediods++
+         block_id (start 1): 8
+         cluster: 49 --> 49
+         frames: 12 --> 4
+         cluster_embedding / cluster_frame_embedding / adaptive_cls: [0 / 0 / False]
+         split_size: 16
+         distance / pre_norm / distance norm_p: [euclidean / 0 / 2.0]
+         stop threshold / iter_limit: [1e-06 / 100]
+         spectral_graph / sigma / knn_k / spg / sign correct: [HeatKernel / 2.0 / 15 / 0 / 1]
+         mean_residual: False
+2022-08-08,14:24:10 | INFO | Rank 0 | [cluster] Creating cluster algorithm object in transformer blocks...[DONE]
+
+2022-08-08,14:24:10 | INFO | Rank 0 | [CLIP] Load new added cluster embedding from CLIP pretrained positional embedding...
+2022-08-08,14:24:10 | INFO | Rank 0 | [CLIP] Load new added cluster embedding from CLIP pretrained positional embedding...[DONE]
+
+2022-08-08,14:24:11 | INFO | Rank 0 | ========================================
+2022-08-08,14:24:11 | INFO | Rank 0 | Weights of CLIP4Clip not initialized from pretrained model: 
+   clip.visual.position_ids
+2022-08-08,14:24:11 | INFO | Rank 0 | Weights from pretrained model not used in CLIP4Clip: 
+   clip.input_resolution
+   clip.context_length
+   clip.vocab_size
+2022-08-08,14:24:11 | INFO | Rank 0 | 
+weight from DeepCluster
+2022-08-08,14:24:11 | INFO | Rank 0 | [weight convert] ==>> Convert weights to fp32 for amp...
+2022-08-08,14:24:11 | INFO | Rank 0 | [weight convert] ==>> Convert done!
+INFO>>> (lr) Using cos learning rate scheduler with warm-up iterations of 1095.0!
+2022-08-08,14:24:28 | INFO | Rank 0 | [optimizer] The new added params are []
+2022-08-08,14:24:28 | INFO | Rank 0 | [optimizer] Using AdamW Optimizer...
+2022-08-08,14:24:29 | INFO | Rank 0 | [resume] => Loading state_dict of AMP loss scaler
+2022-08-08,14:24:29 | INFO | Rank 0 | [resume] => loaded checkpoint '/home/estela19/workspace/vlret/models/eclip/ckpt.best.pth.tar' (epoch 3)
+
+2022-08-08,14:24:29 | INFO | Rank 0 | 
+======================== Running training ========================
+2022-08-08,14:24:29 | INFO | Rank 0 |   Num examples = 140200
+2022-08-08,14:24:29 | INFO | Rank 0 |   Batch size = 64
+2022-08-08,14:24:29 | INFO | Rank 0 |   Num steps = 10950
+2022-08-08,14:24:29 | INFO | Rank 0 | 
+======================== Running test ========================
+2022-08-08,14:24:29 | INFO | Rank 0 |   Num examples = 1000
+2022-08-08,14:24:29 | INFO | Rank 0 |   Batch size = 16
+2022-08-08,14:24:29 | INFO | Rank 0 |   Num steps = 63
+2022-08-08,14:24:29 | INFO | Rank 0 | 
+======================== Running val ========================
+2022-08-08,14:24:29 | INFO | Rank 0 |   Num examples = 1000
+2022-08-08,14:24:45 | INFO | Rank 0 | 49/63
+2022-08-08,14:24:46 | INFO | Rank 0 | 62/63
+2022-08-08,14:24:47 | INFO | Rank 0 | The total model inference time of the program is 18.06 Seconds
+
+2022-08-08,14:24:48 | INFO | Rank 0 | sim matrix size: 1000, 1000
+2022-08-08,14:24:48 | INFO | Rank 0 |    Length-T: 1000, Length-V:1000
+2022-08-08,14:24:48 | INFO | Rank 0 | Text-to-Video:
+2022-08-08,14:24:48 | INFO | Rank 0 |  (metric) >>>  R@1: 43.4 - R@5: 71.3 - R@10: 80.3 - Median R: 2.0 - Mean R: 16.5
+2022-08-08,14:24:48 | INFO | Rank 0 | Video-to-Text:
+2022-08-08,14:24:48 | INFO | Rank 0 |  (metric) >>>  V2T$R@1: 42.9 - V2T$R@5: 69.5 - V2T$R@10: 79.7 - V2T$Median R: 2.0 - V2T$Mean R: 12.3
+2022-08-08,14:24:48 | INFO | Rank 0 | The total running time of the program is 19.35 Seconds
+
+2022-08-08,14:24:48 | INFO | Rank 0 | The maximum GPU memory occupied by this program is 4.37 GB
+
+Training Finished!!!
